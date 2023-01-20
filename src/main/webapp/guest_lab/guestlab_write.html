@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>방명록 : 클라이언트 홈</title>
+<link href="filegb.css" rel="stylesheet" type="text/css">
+<style>
+	div {
+		width:800px;
+		margin-left:0 auto;
+	}
+	#write {
+		font-size : 30px;
+	}
+</style>
+<script>
+	function check() {
+		with (document.filegbwrite){
+			if (idx.value.length == 0){
+				alert ("배열을 입력해주세요")
+				idx.focus();
+				return false;
+			}
+			if(email.value.length == 0){
+				alert("메일을 입력해주세요");
+				email.focus();
+				return false;
+			}
+			if(phone.value.length == 0){
+				alert("번호를 입력해주세요");
+				phone.focus();
+				return false;
+			}
+			if (gender.value.length == 0){
+				alert ("성별을 입력해주세요")
+				gender.focus();
+				return false;
+			}
+			if (address.value.length == 0){
+				alert ("주소를 입력해주세요")
+				address.focus();
+				return false;
+			}
+			document.filegbwrite.submit();
+		}
+		
+	}
+
+</script>
+</head>
+<body>
+	<form name = "filegbwrite" method = "get" action="guestlab_save.jsp">
+	<div>
+		<table width="600px cellspacing="0" cellpadding="2">
+			<tr><td colspan = "2" bgcolor="#1F4F8F" height = "1"></td><span id = "write">글쓰기</span></tr>
+			<td> 배열 번호 : </td>
+			<td> <input type = "text" name = "idx" class="input_style1"></td>
+			<tr><td> 메일 : </td>
+				<td> <input type = "text" name = "email" class="input_style1"></td>
+			</tr>
+			<tr>
+			<tr><td> 번호 : </td>
+			<td> <input type = "text" name = "phone" class="input_style1"></td>
+			</tr>
+			<tr>
+			
+			<tr><td> 성별 : </td>
+			<td> <input type = "text" name = "gender" class="input_style1"></td>
+			</tr>
+			
+			<tr>
+			<tr><td> 주소 : </td>
+			<td> <input type = "text" name = "address" class="input_style1"></td>
+			</tr>
+			
+			<tr>
+				<td colspan = "2" height="50px">&nbsp; </td>	<!-- 공백 -->
+			</tr>
+			<tr><td colspan="2" > <!-- 취소 / 확인 / 글쓰기 이미지를 처리 -->
+				<table width="100%" border="0" cellspacing="0" cellpadding="0">
+					<tr>
+						<td width = "28%"> &nbsp; </td>
+						<td width = "51%"> &nbsp; </td>
+						<td width = "12%"> 
+						<a href="guestlab_show.jsp">
+						<img src = "images/cancle.gif" width ="46px" height="20px">
+						</a>
+						 </td>
+						<td width = "9%"> 
+							<a href = "#" onClick = "check(this.form)">
+							<img src = "images/ok.gif" width ="46px" height="20px"> </td>
+					</tr>
+				</table>
+			</td>
+			</tr>
+		</table>
+	
+	</div>
+	</from>
+
+</body>
+</html>
+
+
+
